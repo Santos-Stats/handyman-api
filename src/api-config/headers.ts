@@ -9,3 +9,9 @@ export const hFootstats =
         'Content-Type': 'application/json',
         Origin: 'https://www.footstats.com.br',
     }
+
+export const hApiFootball =
+    {
+        'X-RapidAPI-Key': process.env.KEY_API_FOOTBALL,
+        'X-RapidAPI-Host': process.env.HOST_API_FOOTBALL
+    }
