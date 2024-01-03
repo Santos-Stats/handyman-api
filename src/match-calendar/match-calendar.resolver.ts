@@ -10,8 +10,9 @@ export class MatchCalendarResolver {
     async matchCalendar(
         @Args('skip', { nullable: true }) skip: number, 
         @Args('limit', { nullable: true }) limit: number,
-        @Args('league', { nullable: true }) league: number): Promise<EndpointResponse[]> {
-        const response = await this.matchCalendarService.getCalendar(skip, limit, league);
+        @Args('league', { nullable: true }) league: number,
+        @Args('season', { nullable: true }) season: number): Promise<EndpointResponse[]> {
+        const response = await this.matchCalendarService.getCalendar(skip, limit, league, season);
         return response
     }
 }
