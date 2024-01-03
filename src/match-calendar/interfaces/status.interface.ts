@@ -1,3 +1,0 @@
-interface Status {
-    long: string;
-}
