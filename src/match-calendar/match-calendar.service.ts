@@ -12,9 +12,10 @@ export class MatchCalendarService {
         season: '2023',
         team: '128'
     })
-    const matches: Match[] = request.response;
+    const allMatches: Match[] = request.response;
+    const paginatedMatches = allMatches.slice(skip, skip + limit);
 
-    const response: EndpointResponse[] = matches.map((match: Match) => {
+    const response: EndpointResponse[] = paginatedMatches.map((match: Match) => {
         return {
             status: match.fixture.status.long,
             league: match.league.name,
@@ -34,4 +35,3 @@ export class MatchCalendarService {
   return response;
   }
 }
-
