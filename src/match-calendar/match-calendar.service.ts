@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { hApiFootball } from 'src/api-config/headers';
 import { getRequest } from 'src/api-config/requests';
 import { url } from 'src/api-config/urls';
-import { EndpointResponse } from './interfaces/endpointResponse.interface';
+import { EndpointResponse } from './types/endpointResponse.type';
+import { Match } from './types/match.type';
 
 @Injectable()
 export class MatchCalendarService {

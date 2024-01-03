@@ -1,5 +1,5 @@
+import { EndpointResponse } from './types/endpointResponse.type';
 import { MatchCalendarService } from './match-calendar.service';
-import {EndpointResponse} from './interfaces/endpointResponse.interface'
 import { Resolver, Query, Args } from '@nestjs/graphql';
 
 @Resolver()
