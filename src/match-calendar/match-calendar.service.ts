@@ -7,14 +7,14 @@ import { Match } from './types/match.type';
 
 @Injectable()
 export class MatchCalendarService {
-  async getCalendar(skip: number, limit: number, leagueId: number | null): Promise<EndpointResponse[]> {
+  async getCalendar(skip: number = 0, limit: number | null, leagueId: number | null): Promise<EndpointResponse[]> {
     const request = await getRequest(url.apiFootball.Matches, hApiFootball, {
         season: '2023',
         team: '128',
         league: leagueId
     })
     const allMatches: Match[] = request.response;
-    const paginatedMatches = allMatches.slice(skip, skip + limit);
+    const paginatedMatches = allMatches.slice(skip, skip + (limit ?? allMatches.length));
 
     const response: EndpointResponse[] = paginatedMatches.map((match: Match) => {
         return {
