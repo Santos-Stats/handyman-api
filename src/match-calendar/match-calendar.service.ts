@@ -16,7 +16,7 @@ export class MatchCalendarService {
 
     const response: EndpointResponse[] = matches.map((match: Match) => {
         return {
-            status: match.fixture.status,
+            status: match.fixture.status.long,
             league: match.league.name,
             round: match.league.round,
             stadium: match.fixture.venue,
