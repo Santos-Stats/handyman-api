@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { MatchesResolver } from './matches/matches.resolver';
-import { MatchesService } from './matches/matches.service';
-import { Calendar } from './matches/scraping/Calendar';
+import { MatchCalendarResolver } from './match-calendar/match-calendar.resolver';
+import { MatchCalendarService } from './match-calendar/match-calendar.service';
 
 
 @Module({
@@ -14,6 +13,6 @@ import { Calendar } from './matches/scraping/Calendar';
     }),
   ],
   controllers: [],
-  providers: [MatchesResolver, MatchesService, Calendar],
+  providers: [MatchCalendarResolver, MatchCalendarService],
 })
 export class AppModule {}
