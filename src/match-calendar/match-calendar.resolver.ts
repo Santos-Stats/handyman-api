@@ -7,8 +7,11 @@ export class MatchCalendarResolver {
     constructor(private readonly matchCalendarService: MatchCalendarService) {}
 
     @Query(() => [EndpointResponse])
-    async matchCalendar(@Args('skip') skip: number, @Args('limit') limit: number): Promise<EndpointResponse[]> {
-        const response = await this.matchCalendarService.getCalendar(skip, limit);
+    async matchCalendar(
+        @Args('skip') skip: number, 
+        @Args('limit') limit: number,
+        @Args('league', { nullable: true }) league: number): Promise<EndpointResponse[]> {
+        const response = await this.matchCalendarService.getCalendar(skip, limit, league);
         return response
     }
 }
