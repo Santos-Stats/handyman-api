@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { MatchCalendarResolver } from './match-calendar/match-calendar.resolver';
-import { MatchCalendarService } from './match-calendar/match-calendar.service';
+import { MatchReviewService } from './match-review/match-review.service';
+import { MatchReviewResolver } from './match-review/match-review.resolver';
+import { CalendarModule } from './calendar/calendar.module';
 
 
 @Module({
@@ -11,8 +12,8 @@ import { MatchCalendarService } from './match-calendar/match-calendar.service';
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
+    CalendarModule,
   ],
-  controllers: [],
-  providers: [MatchCalendarResolver, MatchCalendarService],
+  providers: [MatchReviewResolver, MatchReviewService],
 })
-export class AppModule {}
+export class AppModule { }

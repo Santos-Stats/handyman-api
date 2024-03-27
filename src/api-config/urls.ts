@@ -54,7 +54,9 @@ export const url =
 
 */
         PlayersStaticsByFixtureId: "https://api-football-v1.p.rapidapi.com/v3/fixtures/players"
+    },
+
+    soccerWay: {
+        matchReview: "https://soccerway-feed.p.rapidapi.com/v1/matches/data"
     }
-
-
 }
